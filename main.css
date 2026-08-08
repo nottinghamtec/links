@@ -29,7 +29,10 @@ body {
     max-width: 22rem;
 }
 
-/* ---------- profile header ---------- */
+/*  profile header
+    Addition of Logo tagline and taster session formatting
+    Socials put into pills
+*/
 
 .profile {
     text-align: center;
@@ -91,7 +94,9 @@ body {
     outline-offset: 2px;
 }
 
-/* ---------- link list ---------- */
+/*  link list
+    Unchanged from the original
+*/
 
 .links {
     list-style: none;
