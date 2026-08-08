@@ -32,6 +32,8 @@ body {
 /*  profile header
     Addition of Logo tagline and taster session formatting
     Socials put into pills
+
+    Added Goop texture to the social pills
 */
 
 .profile {
@@ -59,43 +61,57 @@ body {
 
 .taster {
     margin: 0.15rem 0 0;
-    font-size: 0.82rem;
-    color: var(--muted);
+    font-size: 0.88rem;
 }
 
 .social-row {
     display: flex;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 0.7rem;
     margin-top: 0.9rem;
 }
 
-.social-row a {
+.pill {
     display: inline-flex;
     align-items: center;
-    padding: 0.4rem 0.95rem;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    color: var(--ink);
+    padding: 0.5rem 1.15rem;
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.82rem;
-    font-weight: 600;
-    transition: background-color 0.15s ease, border-color 0.15s ease;
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;
+    transition: transform 0.15s ease, filter 0.15s ease;
 }
 
-.social-row a:hover,
-.social-row a:focus-visible {
-    background: var(--card-hover);
-    border-color: var(--accent);
+.pill-ig {
+    background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 55%, #6228d7 100%);
 }
 
-.social-row a:focus-visible {
-    outline: 2px solid var(--accent);
+.pill-fb {
+    background: linear-gradient(135deg, #1877f2 0%, #0a58d6 100%);
+}
+
+.pill:hover,
+.pill:focus-visible {
+    filter: brightness(1.06);
+    transform: translateY(-1px);
+}
+
+.pill:focus-visible {
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pill {
+        transition: none;
+    }
 }
 
 /*  link list
     Unchanged from the original
+    Added colour flair for links
 */
 
 .links {
@@ -111,7 +127,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
-    padding: 0.85rem 1.1rem;
+    padding: 0.85rem 1.1rem 0.85rem 1.35rem;
     border-radius: 0.7rem;
     background: var(--card);
     border: 1px solid var(--border);
@@ -119,7 +135,25 @@ body {
     text-decoration: none;
     box-shadow: 0 1px 2px rgba(20, 20, 30, 0.04);
     transition: background-color 0.15s ease, border-color 0.15s ease;
+    position: relative;
+    overflow: hidden;
 }
+
+.links a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+}
+
+.links li.blue a::before { background: #1877f2; }
+.links li.pink a::before { background: #ee2a7b; }
+.links li.indigo a::before { background: #3d52a0; }
+.links li.amber a::before { background: #f2a93b; }
+.links li.green a::before { background: #34a870; }
+.links li.purple a::before { background: #8b5cf6; }
 
 .links a:hover,
 .links a:focus-visible {
