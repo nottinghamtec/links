@@ -1,60 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEC PA & Lighting Links</title>
     <link rel="stylesheet" href="main.css">
-    <div class="center-horizontal headerdiv">
-        <h1 class="header">TEC PA & Lighting Links</h1>
-    </div>
 </head>
-
 <body>
-    <div class="outer">
-        <div class="center-horizontal">
+
+<div class="page">
+
+    <header class="profile">
+        <picture>
+            <!-- User prefers light mode: -->
+            <source srcset="images/TEC_Logo.webp" media="(prefers-color-scheme: light)"/>
+
+            <!-- User prefers dark mode: -->
+            <source srcset="images/TEC_Logo_Dark_BG.webp"  media="(prefers-color-scheme: dark)"/>
+
+            <!-- User has no color preference: -->
+            <img class="logo" src="images/TEC_Logo.webp" alt="TEC PA & Lighting logo"/>
+        </picture>
+
+        <h1>TEC PA &amp; Lighting</h1>
+        <p class="tagline">Come backstage at the biggest events!</p>
+        <p class="taster">Join us for New Member Inductions &amp; Taster Sessions</p>
+
+        <div class="social-row">
+            <a class="social" href="https://www.instagram.com/nottinghamtec/">
+                Instagram
+            </a>
+            <a class="social" href="https://www.tiktok.com/@nottinghamtec">
+                TikTok
+            </a>
+            <a class="social" href="https://www.facebook.com/nottinghamtec/">
+                Facebook
+            </a>
         </div>
-        <div class="list-wrapper">
 
-            <div class="item"><a href="https://www.nottinghamtec.co.uk/">
-                    <h3>Main website</h3>
-                    <p>www.nottinghamtec.co.uk/</p>
-                </a>
-            </div>
+    </header>
+    <ul class="links">
+        <li class="highlight">
+            <!-- Generate a new .ics file from your calendar app of choice and change the href with the one it gives you-->
+            <a href="data:text/calendar;charset=utf8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-//tec.uonsu.com//Event//EN%0D%0ACALSCALE%3AGREGORIAN%0D%0AMETHOD%3APUBLISH%0D%0ABEGIN%3AVEVENT%0D%0AUID%3Atec-taster-27sept2026%40uonsu.com%0D%0ADTSTAMP%3A20260808T190000Z%0D%0ADTSTART%3A20260927T120000Z%0D%0ADTEND%3A20260927T140000Z%0D%0ASUMMARY%3ATEC%20Taster%20-%2027%20Sept%2C%201pm%0D%0ALOCATION%3APortland%20Building%2C%20East%20Dr%2C%20Nottingham%20NG7%202QH%2C%20UK%0D%0ADESCRIPTION%3AJoin%20us%20for%20an%20introduction%20to%20what%20TEC%20does%20and%20how%20you%20can%20get%20backstage%20access%20to%20some%20of%20the%20largest%20UoNSU%20events%20and%20varsity%20events%21%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A"
+               download="TEC-Taster-27Sept.ics">
+            <span class="link-text">
+                <span class="label">NMI &amp; Taster — 27 Sept 1300 Portland Welcome Zone</span>
+                <span class="sub">Add to your calendar</span>
+            </span>
+            </a>
+        </li>
+        <li class="highlight">
+            <!-- Generate a new .ics file from your calendar app of choice and change the href with the one it gives you-->
+            <a href="data:text/calendar;charset=utf8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-//tec.uonsu.com//Event//EN%0D%0ACALSCALE%3AGREGORIAN%0D%0AMETHOD%3APUBLISH%0D%0ABEGIN%3AVEVENT%0D%0AUID%3Atec-taster-29sept2026%40uonsu.com%0D%0ADTSTAMP%3A20260808T190000Z%0D%0ADTSTART%3A20260929T170000Z%0D%0ADTEND%3A20260929T190000Z%0D%0ASUMMARY%3ATEC%20Taster%20-%2029%20Sept%2C%206pm%0D%0ALOCATION%3APortland%20Building%2C%20East%20Dr%2C%20Nottingham%20NG7%202QH%2C%20UK%0D%0ADESCRIPTION%3AJoin%20us%20for%20an%20introduction%20to%20what%20TEC%20does%20and%20how%20you%20can%20get%20backstage%20access%20to%20some%20of%20the%20largest%20UoNSU%20events%20and%20varsity%20events%21%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A"
+               download="TEC-Taster-29Sept.ics">
+            <span class="link-text">
+                <span class="label">NMI &amp; Taster — 29 Sept 1800 Portland Welcome Zone</span>
+                <span class="sub">Add to your calendar</span>
+            </span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.nottinghamtec.co.uk/">
+                <span class="link-text">
+                    <span class="label">Website</span>
+                    <span class="sub">nottinghamtec.co.uk</span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="mailto:info@nottinghamtec.co.uk">
+                <span class="link-text">
+                    <span class="label">Enquiries</span>
+                    <span class="sub">info@nottinghamtec.co.uk</span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="mailto:members@nottinghamtec.co.uk">
+                <span class="link-text">
+                    <span class="label">Questions about membership?</span>
+                    <span class="sub">members@nottinghamtec.co.uk</span>
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
 
-            <div class="item"><a href=mailto:info@nottinghamtec.co.uk?>
-                    <h3>Client enquires</h3>
-                    <p>info@nottinghamtec.co.uk</p>
-                </a>
-            </div>
-
-
-            <div class="item"><a href="https://join.nottinghamtec.co.uk/">
-                    <h3>Become a member</h3>
-                    <p>join.nottinghamtec.co.uk/</p>
-                </a>
-            </div>
-
-            
-            <div class="item"><a href=mailto:members@nottinghamtec.co.uk?>
-                    <h3>Got questions about becoming a member? </h3><h3></h3>Get in touch!</h3>
-                    <p>members@nottinghamtec.co.uk</p>
-                </a>
-            </div>
-            
-            <!-- Uncomment to add new link
-            <div class="item"><a
-                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20231007T100000Z%2F20231007T130000Z&details=Come%20along%20to%20find%20out%20more%20about%20what%20TEC%20do%2C%20use%20some%20of%20our%20kit%20and%20how%20to%20get%20involved.%20Food%20will%20be%20provided.&location=Welcome%20Zone%2C%20Portland%20Building&text=TEC%20New%20Members%20Introduction%2FTry%20it%20Session">
-                    <h3>Add our NMI to your calandar</h3>
-                    <p>7th October @ 11am - Welcome Zone, Portland Building </p>
-                </a>
-            </div>
-            -->
-
-        </div>
-    </div>
 </body>
-
-</html>s
+</html>
