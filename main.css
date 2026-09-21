@@ -1,110 +1,252 @@
 :root {
-    --blue: rgba(52, 81, 166, 0.8);
-    --darkblue: rgba(27, 42, 88, 0.8);
+    --bg: #f0f1f3;
+    --card: #ffffff;
+    --card-hover: #f7f8fa;
+    --border: #e3e5e9;
+    --ink: #1a1c20;
+    --muted: #6b7280;
+    --accent: #3d52a0;
+    --accent-tint: #e9ecf7;
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 2.5rem;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.5rem;
+
+    color-scheme: light dark;
 }
 
-h1,h2,h3,h4,h5,p,a,li,span {
-    font-family: "Open Sans", sans-serif;
-    color: #fff;
-    text-align: center;
-    margin: 5px;
-    text-decoration: none;
-
+/* Dark mode — follows the user's OS/browser setting automatically */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #16171a;
+        --card: #1f2125;
+        --card-hover: #26282d;
+        --border: #33353b;
+        --ink: #f0f1f3;
+        --muted: #9aa0ab;
+        --accent: #8ea1e8;
+        --accent-tint: #232a45;
+    }
 }
 
-h1 {
-    font-size: 1.5em;
-    font-weight: 200;
-}
-
-h2,h3 {
-    font-weight: 200;
-    font-size: 1em;
-}
-
-p {
-    font-size: 0.5em;
+* {
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #000000;
-    margin: 0 0 20px 0;
-    background-image: url("images/bglogo1.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
-
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: var(--space-7) var(--space-4) var(--space-6);
 }
 
-.list-wrapper {
-    list-style-type: none;
+.page {
+    width: 100%;
+    max-width: 22rem;
+}
+
+/*  profile header
+    Addition of Logo tagline and taster session formatting
+    Socials put into pills
+    Added Goop texture to the social pills*/
+
+.profile {
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.logo {
+    width: 6rem;
+    height: auto;
+    margin-bottom: var(--space-3);
+}
+
+/* Show the light-mode logo by default, hide the dark-mode one */
+.logo-dark {
+    display: none;
+}
+
+/* Swap which logo is visible when the user prefers dark mode */
+@media (prefers-color-scheme: dark) {
+    .logo-light {
+        display: none;
+    }
+
+    .logo-dark {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.profile h1 {
+    margin: 0 0 var(--space-1);
+    font-size: var(--text-lg);
+    font-weight: 700;
+}
+
+.tagline {
+    margin: 0;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.taster {
+    margin: var(--space-2) 0 0;
+    font-size: var(--text-sm);
+}
+
+.taster strong {
+    font-weight: 600;
+    color: var(--ink);
+}
+
+/*  socials  */
+
+.social-row {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+}
+
+.social {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--card);
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.social svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+
+.social:hover,
+.social:focus-visible {
+    background: var(--card-hover);
+    border-color: var(--accent);
+}
+
+.social:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .social,
+    .links a {
+        transition: none;
+    }
+}
+
+/*  link list
+    Unchanged from the original
+    Added colour flair options for links
+    */
+
+.links {
+    list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    height: 100%;
+    gap: var(--space-2);
 }
 
-.item {
-    margin: 0.7rem 0.5rem;
-    font-size: 1.5em;
-    text-align: center;
-    border-radius: 0.1rem;
-    width: 50%;
-    background-color: var(--blue);
-    border-radius: 0.1em;
-    box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.5);
-    
+.links a {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-}
-
-
-link {
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--space-2);
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--ink);
     text-decoration: none;
-    text-decoration-color: #000000;
-    padding: 0;
+    box-shadow: 0 1px 2px rgba(20, 20, 30, 0.04);
+    transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
-.center-horizontal {
+.links a:hover,
+.links a:focus-visible {
+    background: var(--card-hover);
+    border-color: var(--accent);
+}
+
+.links a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.links li.highlight a {
+    background: var(--accent-tint);
+    border-color: var(--accent);
+}
+
+.link-text {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    height: 100%;
+    gap: var(--space-1);
+    min-width: 0;
 }
 
-
-
-.header {
-    border-radius: 0.1em;
-    box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.5);
-    background-color: rgba(52, 81, 166, 0.5);
-    padding: 0.5em;
-    width: 50%;
+.label {
+    font-size: var(--text-base);
+    font-weight: 600;
 }
 
-.floating {
-    border-radius: 0.1em;
-    box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.5);
+.location {
+    font-size: var(--text-sm);
+    color: var(--muted);
+    font-style: italic;
 }
 
-@media screen and (max-width: 600px) {
-    .item {
-        width: 90%;
+.sub {
+    font-size: var(--text-xs);
+    color: var(--muted);
+}
+
+.arrow {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    color: var(--muted);
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.links a:hover .arrow,
+.links a:focus-visible .arrow {
+    color: var(--accent);
+    transform: translate(2px, -2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .arrow {
+        transition: none;
     }
-    .header {
-        width: 90%;
-    }
 }
-    
-.headerdiv {
-    margin-top: 2%;
-}
-
